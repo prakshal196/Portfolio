@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Structural Analysis of Robinson R22 Helicopter Tail | Prakshal Shah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <a href="../index.html#projects" class="back-button">&larr; Back to Portfolio</a>
+
+  <div id="intro">
+    <h1>Structural Analysis of Robinson R22 Helicopter Tail</h1>
+    <div class="intro-subtitle">
+      <p>FEA · MS Excel</p>
+      <p>Team Project</p>
+    </div>
+    <div class="tech-tags">
+      <span class="tech-tag">Structural Analysis</span>
+      <span class="tech-tag">FEA</span>
+      <span class="tech-tag">Helicopter Design</span>
+      <span class="tech-tag">Composites</span>
+    </div>
+    <a href="#overview" class="button">Explore</a>
+  </div>
+
+  <header id="header">
+    <div class="header-inner project-nav">
+      <nav id="nav" aria-label="Primary">
+        <ul class="links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#results">Results</a></li>
+          <li>
+            <a class="icon-link" href="mailto:prakshal196@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </li>
+          <li>
+            <a class="icon-link" href="https://www.linkedin.com/in/prakshal-shah/" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section id="overview" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Project Overview</h2></header>
+        <p>
+          This was a two-part FEA team project (Coursework 1 and Coursework 2) modelling the
+          horizontal stabiliser of a Robinson R22 helicopter in Abaqus. The stabiliser reduces
+          flight disturbances to maintain dynamic stability, so its structural integrity directly
+          affects flight safety.
+        </p>
+        <p>
+          <strong>CW1</strong> built and verified a baseline aviation-aluminium shell model of the
+          stabiliser, investigating how adding internal ribs and spars affected tip displacement
+          and root stress.
+        </p>
+        <p>
+          <strong>CW2</strong> took that verified aluminium baseline and asked a different
+          question: could a carbon-epoxy composite layup replace the aluminium structure and meet
+          the same displacement requirement at a significantly lower weight? The skin and spar
+          stacking sequences (ply angles and ply count) were optimised to minimise mass.
+        </p>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="inner">
+        <header class="major"><h2>Technical Approach</h2></header>
+        <p>
+          Both parts used Abaqus for the finite element analysis, with MATLAB used for polynomial
+          curve fitting of the airfoil pressure distribution, mesh convergence residual-error
+          calculations, and hand-calculation validation of composite lamina behaviour.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/r22-helicopter-tail/pressure-distribution-bc.png" alt="Pressure distribution over the stabiliser upper surface and boundary conditions applied at the root" loading="lazy" />
+          <figcaption>Distributed airfoil pressure loading (purple) and root encastre boundary conditions (red) applied to the CW1 baseline model.</figcaption>
+        </figure>
+
+        <h3>Key techniques</h3>
+        <ul>
+          <li>Shell modelling of the stabiliser geometry, lofted between root (260&nbsp;mm) and tip (155&nbsp;mm) chords, with distributed airfoil pressure loading derived by fitting polynomial functions to coefficient-of-pressure data at a 10° angle of attack</li>
+          <li>Mesh convergence and residual mesh error analysis to quantify model reliability, alongside sensitivity testing of rib/spar thickness and Young's modulus against manufacturing tolerances (CW1)</li>
+          <li>Composite conventional shell lay-up modelling with orthotropic lamina properties, validated against MATLAB hand calculations, followed by iterative stacking-sequence optimisation of ply count and fibre orientation, applying symmetry and balanced-ply manufacturing constraints (CW2)</li>
+        </ul>
+
+        <h3>Process steps</h3>
+        <ol>
+          <li>Built the baseline aluminium shell geometry from technical drawings and airfoil profile data, then derived and validated the distributed pressure loading with root encastre boundary conditions (CW1)</li>
+          <li>Ran mesh convergence tests, identified a design change (adding a second spar near the trailing edge) to reduce tip displacement and root stress, and re-verified (CW1)</li>
+          <li>Carried the verified aluminium baseline into CW2, swapped the material for carbon-epoxy, and independently tested spar ply count, spar fibre orientation, and skin fibre orientation against mass and tip displacement, narrowing to the lay-up that minimised mass while keeping displacement close to the aluminium baseline</li>
+        </ol>
+
+        <figure class="project-figure">
+          <img src="images/r22-helicopter-tail/design-change-second-spar.png" alt="Cutout view of the stabiliser with the added second spar highlighted near the trailing edge" loading="lazy" />
+          <figcaption>CW1 design change: a second spar (highlighted) was added near the trailing edge to reduce tip displacement and root stress.</figcaption>
+        </figure>
+
+        <figure class="project-figure">
+          <img src="images/r22-helicopter-tail/ply-stack-plots.png" alt="Ply stack plots for the optimised composite skin and spar" loading="lazy" />
+          <figcaption>Optimised ply stacking sequences for the composite skin and spar (CW2): [0,30,0,-30,-30,0,30,0] and [0,20,0,-20,0,-20,0,20,0] respectively.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="results" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Results &amp; Analysis</h2></header>
+        <p>
+          The optimised carbon-epoxy stabiliser (spar lay-up [0,20,0,-20,0,-20,0,20,0], skin
+          lay-up [0,30,0,-30,-30,0,30,0]) achieved a <strong>40.5% mass reduction</strong>
+          compared to the aluminium baseline, with only a <strong>0.173% increase in tip
+          displacement</strong>, a strong result for a weight-driven redesign.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/r22-helicopter-tail/von-mises-and-displacement.png" alt="Von Mises stress and displacement contour plots on the updated CW1 aluminium model" loading="lazy" />
+          <figcaption>Von Mises stress and displacement distribution on the CW1 aluminium model after the design change (second spar added).</figcaption>
+        </figure>
+
+        <figure class="project-figure">
+          <img src="images/r22-helicopter-tail/mass-displacement-scatter.png" alt="Mass vs. tip displacement scatter across composite lay-up cases" loading="lazy" />
+          <figcaption>Mass vs. displacement across the composite lay-up cases tested in CW2, used to identify the optimum stacking sequence.</figcaption>
+        </figure>
+
+        <figure class="project-figure">
+          <img src="images/r22-helicopter-tail/final-displacement-comparison.png" alt="Final displacement contour and aluminium vs. composite comparison table" loading="lazy" />
+          <figcaption>Displacement contour of the optimised composite stabiliser (upper surface), and the final comparison: 0.44562&nbsp;mm / 0.65495&nbsp;kg (aluminium) vs. 0.44639&nbsp;mm / 0.38950&nbsp;kg (composite).</figcaption>
+        </figure>
+
+        <p>
+          However, the composite model's maximum von Mises strain at the skin exceeded the
+          material's ultimate longitudinal and transverse tensile strains, meaning the simplified
+          model as tested would fail. This was attributed to geometry simplifications (ribs,
+          additional spars, and reinforcement plates were excluded from the model) and a
+          simplified load representation on the upper surface, both of which would reduce
+          real-world strain.
+        </p>
+
+        <h3>Challenges &amp; solutions</h3>
+        <p>
+          The two main challenges were defining boundary conditions that accurately represented
+          the aircraft connection without introducing unrealistic stress concentrations, and
+          correctly implementing composite layup modelling: orthotropic lamina properties, ply
+          orientation, and lay-up symmetry/balance constraints needed to avoid manufacturing
+          defects like thermal warpage. The composite lamina implementation in Abaqus was
+          independently checked against MATLAB hand calculations before being trusted for the
+          full model. Separately, the CW1 aluminium model showed a stress concentration at the
+          root that did not converge with mesh refinement; rather than force a result, this was
+          reported as an unresolved limitation, with displacement (which did converge) used as
+          the primary reliability metric instead.
+        </p>
+
+        <h3>Key learnings</h3>
+        <p>
+          This project reinforced how much FEA results depend on the assumptions behind them:
+          mesh convergence, boundary condition choice, and load simplification all directly shape
+          whether a result can be trusted. It also highlighted the real trade-offs in composite
+          design: a lay-up that looks excellent on a mass/displacement basis can still fail on
+          strain, which is why stacking-sequence optimisation has to be checked against material
+          failure criteria, not just the primary performance target.
+        </p>
+
+        <h3>Team &amp; my contribution</h3>
+        <p>
+          A team project with one other teammate. My contribution covered the Abaqus side from
+          end to end: building the shell geometry, running the simulations, carrying out the
+          mesh convergence studies, and compiling the results into Excel for analysis. My
+          teammate built the pressure-distribution boundary condition in MATLAB, a function
+          that varies the load across the full stabiliser span rather than applying a constant
+          pressure, and independently validated the Abaqus results against hand calculations.
+          We wrote the final report together.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <p><a href="../index.html#projects">&larr; Back to all projects</a></p>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>UAV Payload Integration &amp; Optimization | Prakshal Shah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <a href="../index.html#projects" class="back-button">&larr; Back to Portfolio</a>
+
+  <div id="intro">
+    <h1>UAV Payload Integration &amp; Optimization</h1>
+    <div class="intro-subtitle">
+      <p>CAD · CFD · FEA · MS Excel</p>
+      <p>Team Project (Team 7, MECH3450 Aerospace Vehicle Design, University of Leeds)</p>
+    </div>
+    <div class="tech-tags">
+      <span class="tech-tag">UAV Design</span>
+      <span class="tech-tag">CFD Analysis</span>
+      <span class="tech-tag">Payload Integration</span>
+      <span class="tech-tag">Stability &amp; Structures</span>
+    </div>
+    <a href="#overview" class="button">Explore</a>
+  </div>
+
+  <header id="header">
+    <div class="header-inner project-nav">
+      <nav id="nav" aria-label="Primary">
+        <ul class="links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#results">Results</a></li>
+          <li>
+            <a class="icon-link" href="mailto:prakshal196@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </li>
+          <li>
+            <a class="icon-link" href="https://www.linkedin.com/in/prakshal-shah/" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section id="overview" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Project Overview</h2></header>
+        <p>
+          A six-person team project (Team 7) to modify an Arrows Prodigy 1400mm UAV so it could
+          take off, complete a 10&nbsp;km cruise, hold a three-minute loiter phase, and complete a
+          belly landing while carrying the maximum payload possible. The work spanned a full
+          semester of lab-based investigation across geometry, centre of gravity, aerodynamics,
+          stability, propulsion, and structures.
+        </p>
+        <p>
+          My contribution centred on the CAD/geometry workstream: reverse-engineering the physical
+          UAV by hand-measuring every part, then modelling the tail (horizontal and vertical
+          stabiliser) in SolidWorks, while the fuselage was modelled by a teammate. I also led the
+          final assembly, remodelling the structure for a cleaner, more accurate model, and used
+          the completed CAD model to determine the centre of gravity, which I then validated
+          against the physical aircraft. On the aerodynamics side, I supported a teammate who ran
+          the XFLR5 simulations by reviewing the results for consistency rather than running the
+          analysis myself. The final report and peer assessment (full marks across all four
+          contribution criteria) reflect this share of the group's work.
+        </p>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="inner">
+        <header class="major"><h2>Technical Approach</h2></header>
+
+        <h3>Geometry, weight &amp; payload placement</h3>
+        <ul>
+          <li>Measured every aircraft component by hand (tracing, spring callipers for aerofoil sections) and built a fully dimensioned SolidWorks CAD model, validating it by comparing its calculated centre of gravity (CoG) against experimental measurements taken on a test rig and cross-checked by balancing the aircraft on a ruler</li>
+          <li>Used the CAD model to test candidate payload locations, ruling out placing the full 130g payload at the CoG once it became clear that location was inaccessible without compromising the fuselage's structural integrity</li>
+          <li>Split the payload into two 65g loads mounted 125mm either side of the CoG, keeping the horizontal CoG shift to just 1mm and remaining within the 70&ndash;80mm (from wing leading edge) range specified in the aircraft's operating manual</li>
+        </ul>
+
+        <figure class="project-figure">
+          <img src="images/uav-team-project/geometry-measurements-composite.png" alt="Geometry measurements of the horizontal stabiliser, vertical stabiliser, wing, and fuselage/tail" loading="lazy" />
+          <figcaption>Geometry measurements of the aircraft's parts, taken by hand: (a) horizontal stabiliser, (b) vertical stabiliser, (c) wing, (d) fuselage and tail.</figcaption>
+        </figure>
+
+        <h3>Propulsion &amp; structures</h3>
+        <ul>
+          <li>Bench-tested four propeller options (the stock 7-inch, two alternative pitches, and a tri-blade) for thrust and mechanical efficiency, selecting the tri-propeller for its higher thrust output despite a small efficiency trade-off, since it could still be run at lower electrical power</li>
+          <li>Validated the wing's structural performance experimentally, applying incremental tip loading up to 500g against a fixed root, and compared the measured deflection to a theoretical beam calculation using literature values for Young's modulus, reaching agreement within 9.1%</li>
+          <li>Cross-checked the simplified point-load structural test against a finite element model with a distributed pressure load across the full span, confirming the wing remained within a safe factor of safety (2.3, against a 1.5 aerospace standard) under maximum load factor</li>
+        </ul>
+
+        <figure class="project-figure">
+          <img src="images/uav-team-project/propeller-thrust-power-charts.png" alt="Thrust versus electrical power and mechanical versus electrical power for four propeller options" loading="lazy" />
+          <figcaption>Propeller bench-test results: thrust vs. electrical power (left) and mechanical vs. electrical power (right) for the stock 7-inch, two alternative pitches, and the tri-blade propeller.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/uav-team-project/wing-deflection-force-graph.png" alt="Wing tip deflection versus force, experimental versus theoretical" loading="lazy" />
+          <figcaption>Wing tip deflection vs. force: experimental tip loading compared against two theoretical beam calculations, reaching agreement within 9.1%.</figcaption>
+        </figure>
+
+        <h3>Aerodynamics &amp; stability</h3>
+        <ul>
+          <li>Modelled the full aircraft in XFLR5 using aerofoils measured from the physical wing and stabilisers, generating lift/drag polars for cruise and take-off configurations and identifying the buffet-onset angle of attack to avoid stall</li>
+          <li>Fed the resulting lift, drag, and stall-speed data back into the team's constraint diagram, iterating the feasible design space and payload mass as more accurate propulsion and aerodynamic data became available</li>
+          <li>Ran an XFLR5 stability analysis with the payload modelled as a point load at the updated CoG, tracking the pitching-moment gradient with angle of attack to confirm static longitudinal stability and locate the neutral point</li>
+        </ul>
+
+        <figure class="project-figure">
+          <img src="images/uav-team-project/lift-coefficient-takeoff.png" alt="Coefficient of lift versus angle of attack for take-off" loading="lazy" />
+          <figcaption>Coefficient of lift vs. angle of attack for take-off, identifying the buffet-onset angle where lift begins to fall off before stall.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/uav-team-project/lift-vs-velocity-charts.png" alt="Lift versus velocity for cruise and take-off" loading="lazy" />
+          <figcaption>Lift vs. velocity for cruise (left) and take-off (right), from the XFLR5 aerodynamic model.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/uav-team-project/drag-vs-velocity-charts.png" alt="Drag versus velocity for cruise and take-off" loading="lazy" />
+          <figcaption>Drag vs. velocity for cruise (left) and take-off (right), feeding directly into the team's constraint diagram.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="results" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Results &amp; Analysis</h2></header>
+
+        <p>
+          The finished aircraft carried a <strong>130g payload</strong> at a
+          <strong>1,050g take-off weight</strong>, cruising at 16&nbsp;m/s and 96&nbsp;m altitude
+          for a 10&nbsp;km range plus a 3-minute loiter, all within CAA regulatory limits.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/uav-team-project/weight-breakdown-table.png" alt="Weight breakdown table: mission fuel, empty weight, payload, and take-off weight" loading="lazy" />
+          <figcaption>Weight breakdown: 109g battery, 811g empty weight, and a 130g payload for a 1,050g take-off weight.</figcaption>
+        </figure>
+
+        <figure class="project-figure">
+          <img src="images/uav-team-project/payload-position-cad.png" alt="CAD model showing the split payload positions either side of the CoG" loading="lazy" />
+          <figcaption>Payload split into two 65g loads, 125mm either side of the CoG, keeping the CoG shift to just 1mm.</figcaption>
+        </figure>
+
+        <p>
+          The CoG in X moved from 375.1mm to 374.1mm after payload addition, a 1mm shift that
+          stayed comfortably within the manual's recommended range and in front of the 386mm
+          centre-of-pressure position, confirming static longitudinal stability. The vertical CoG
+          rose by 24.1mm, a deliberate trade-off since the aircraft's stability is far more
+          sensitive to CoG position in the longitudinal direction, and the wing's 2° dihedral
+          angle was judged sufficient to offset the reduced lateral stability this caused.
+        </p>
+
+        <p>
+          The XFLR5 stability analysis confirmed a negative pitching-moment gradient
+          (&minus;0.0219 per degree) at the operating CoG, with the neutral point located 48.4mm
+          further aft, a healthy static margin. Structurally, the wing's maximum stressed state
+          under the worst-case load factor sat at a factor of safety of 2.3, above the 1.5
+          standard used in aerospace design. A full mission-energy budget showed take-off, climb,
+          cruise, loiter, and descent consuming roughly a third of the available battery energy,
+          leaving comfortable margin for systems not explicitly modelled (taxi, servo actuation,
+          radio control).
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/uav-team-project/pitching-moment-coefficient.png" alt="Pitching moment coefficient versus angle of attack, showing the stable CoG and neutral point" loading="lazy" />
+          <figcaption>Pitching moment coefficient between &minus;2&deg; and 12&deg; angle of attack at cruise speed, comparing the operating CoG (374.1mm) against the neutral point (422.5mm).</figcaption>
+        </figure>
+
+        <h3>Challenges &amp; solutions</h3>
+        <p>
+          The measured propeller efficiency (0.67) came in lower than the team's initial estimate
+          (0.8), which shrank the feasible design space in the constraint diagram and pushed the
+          achievable payload down from earlier estimates. Rather than treat this as a setback, the
+          team fed the real bench-test data back into the constraint diagram immediately, updating
+          stall speed, lift/drag coefficients, and landing distance together so the final payload
+          figure reflected measured performance rather than optimistic assumptions.
+        </p>
+
+        <h3>Key learnings</h3>
+        <p>
+          The project reinforced how tightly coupled aircraft design variables are in practice:
+          moving the payload shifts the CoG, which changes the stability margin, which constrains
+          where the payload can go in the first place. Working through that loop as a team, backed
+          by experimental validation at each stage (CoG rig, tip-load testing, propeller bench
+          tests), gave much more confidence in the final specification than relying on any single
+          analytical model alone.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <p><a href="../index.html#projects">&larr; Back to all projects</a></p>
+  </footer>
+
+</body>
+
+</html>

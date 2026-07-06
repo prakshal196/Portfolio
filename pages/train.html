@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>CFD Analysis of High-Speed Trains | Prakshal Shah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <a href="../index.html#projects" class="back-button">&larr; Back to Portfolio</a>
+
+  <div id="intro">
+    <h1>High Speed Locomotive and Train Aerodynamics</h1>
+    <div class="intro-subtitle">
+      <p>CAD · MS Excel · CFD</p>
+      <p>Solo Project (Individual Engineering Project, University of Leeds)</p>
+    </div>
+    <div class="tech-tags">
+      <span class="tech-tag">CFD Simulation</span>
+      <span class="tech-tag">Aerodynamics</span>
+      <span class="tech-tag">Flow Analysis</span>
+      <span class="tech-tag">Design Optimisation</span>
+    </div>
+    <a href="#overview" class="button">Explore</a>
+  </div>
+
+  <header id="header">
+    <div class="header-inner project-nav">
+      <nav id="nav" aria-label="Primary">
+        <ul class="links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#results">Results</a></li>
+          <li>
+            <a class="icon-link" href="mailto:prakshal196@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </li>
+          <li>
+            <a class="icon-link" href="https://www.linkedin.com/in/prakshal-shah/" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section id="overview" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Project Overview</h2></header>
+        <p>
+          A comparison between the aerodynamic performance of two classic British high-speed
+          trains: the APT&#8209;P (Advanced Passenger Train &ndash; Prototype) and APT&#8209;E
+          (Advanced Passenger Train &ndash; Experimental), using CFD. Both trains were developed
+          around the 1980s with streamlined noses and a tilt mechanism, but had never previously
+          been studied computationally due to a lack of available dimensions and drawings.
+        </p>
+        <p>
+          <strong>Aim:</strong> perform CFD simulations to compare the aerodynamic performance of
+          APT&#8209;P and APT&#8209;E, then improve the weaker-performing train by changing its
+          geometry.
+        </p>
+        <p>
+          The study progressed in three stages: validating the simulation setup against a known
+          experimental case (the Ahmed Body), running comparative CFD on both trains to identify
+          the weaker performer, and then making a justified design change to improve it.
+        </p>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="inner">
+        <header class="major"><h2>Technical Approach</h2></header>
+
+        <h3>Validation: the Ahmed Body</h3>
+        <p>
+          Before modelling the trains, the CFD setup was validated against the Ahmed Body, a
+          standard bluff-body benchmark for ground-vehicle aerodynamics, to check the simulation
+          against published experimental results.
+        </p>
+        <ul>
+          <li>Built the Ahmed Body geometry in SolidWorks at a 25° rear slant angle, then defined a symmetric flow region (5W × 5H × 12L) with velocity inlet, pressure outlet, slip/no-slip walls, and a symmetry plane, using the k&ndash;&omega; SST turbulence model at a 60&nbsp;m/s inlet velocity</li>
+          <li>Generated a y&#8314; = 1 boundary-layer mesh and ran a five-case mesh convergence study, selecting the finest converged case for the final result</li>
+          <li>Compared the resulting drag coefficient (0.2817) against the published experimental value (0.285), a 1.14% difference, and cross-checked the simulated wake vortex structure against the experimental flow visualisation</li>
+        </ul>
+
+        <figure class="project-figure">
+          <img src="images/train-project/geometry-ahmed-body.png" alt="Geometry of the Ahmed Body: front, side, top views and SolidWorks model" loading="lazy" />
+          <figcaption>Ahmed Body geometry at a 25° rear slant angle: front, side, and top views, plus the SolidWorks model.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/train-project/flow-region-ahmed-body.png" alt="Flow region for the Ahmed Body simulation" loading="lazy" />
+          <figcaption>Flow region for the Ahmed Body: 5W × 5H, 7L upstream and 12L downstream of the body.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/train-project/boundary-conditions-ahmed-body.png" alt="Boundary conditions for the Ahmed Body simulation, back and front views" loading="lazy" />
+          <figcaption>Boundary conditions: velocity inlet, pressure outlet, slip/no-slip walls, and symmetry plane.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/train-project/simulation-parameters-table.png" alt="Initial simulation parameters table: k, omega, density, and viscosity" loading="lazy" />
+          <figcaption>Initial simulation parameters for the k&ndash;&omega; SST turbulence model.</figcaption>
+        </figure>
+
+        <p>The close agreement confirmed the simulation setup, boundary conditions, and mesh strategy could be carried forward to the main train study.</p>
+
+        <figure class="project-figure">
+          <img src="images/train-project/wake-flow-validation.png" alt="Wake flow of the Ahmed Body: CFD results versus experimental results" loading="lazy" />
+          <figcaption>Ahmed Body wake-flow validation: CFD result (left) versus published experimental flow visualisation (right), confirming the simulated drag coefficient (0.2817) against the experimental value (0.285), a 1.14% difference.</figcaption>
+        </figure>
+
+        <h3>Geometry &amp; simulation setup: APT-P and APT-E</h3>
+        <ul>
+          <li>Reconstructed both trains in SolidWorks from available reference images, since neither train's original CAD data survived. The nose and overall profile were prioritised, wheels were simplified to cylindrical supports, and gaps between coaches and pantographs were omitted as outside the study's scope</li>
+          <li>Built a shared flow region (5W × 5H, 3L ahead of the train) and carried the validated boundary condition setup forward, raising the inlet velocity to 65&nbsp;m/s, below both trains' historical top speeds, to compare them on equal terms</li>
+          <li>Ran a mesh convergence study for each train independently, since geometry differences meant a mesh verified for one train could not be assumed valid for the other</li>
+        </ul>
+
+        <figure class="project-figure">
+          <img src="images/train-project/train-geometry-cad.png" alt="Reconstructed geometry of APT-P and APT-E in SolidWorks" loading="lazy" />
+          <figcaption>Reconstructed CAD geometry: APT&#8209;P (top) and APT&#8209;E (bottom), isometric and front views.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/train-project/flow-region-trains.png" alt="Shared flow region for both train simulations" loading="lazy" />
+          <figcaption>Shared flow region for both trains: 5W × 5H, 3L ahead and 8L behind the train.</figcaption>
+        </figure>
+
+        <h3>Design change: APT-P</h3>
+        <p>
+          Once APT&#8209;P was identified as the weaker performer, a targeted geometry change was
+          made rather than a wholesale redesign, to isolate the effect of the change.
+        </p>
+        <ul>
+          <li>Diagnosed the cause: APT&#8209;P's wide nose forced airflow to curve sharply around the edges, concentrating pressure and generating vortices, while APT&#8209;E's narrower, converging nose let flow pass smoothly</li>
+          <li>Reduced the nose width and shortened the transition length from the nose into the boundary-layer region, deliberately leaving the train's overall profile and identity unchanged</li>
+          <li>Re-ran the full mesh convergence and simulation process on the updated geometry using the identical setup from the baseline study, to produce a direct like-for-like comparison</li>
+        </ul>
+
+        <figure class="project-figure">
+          <img src="images/train-project/updated-geometry-apt-p.png" alt="Updated APT-P geometry with reduced nose width and shortened transition length" loading="lazy" />
+          <figcaption>Updated APT&#8209;P geometry: reduced nose width and a shortened transition length into the boundary-layer region, with the overall profile unchanged.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="results" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Results &amp; Analysis</h2></header>
+
+        <p>
+          The baseline comparison showed a clear performance gap: APT&#8209;E produced
+          <strong>37.74% less drag</strong> and <strong>58.66% less lift</strong> than
+          APT&#8209;P, with smooth attached flow around APT&#8209;E versus a mix of turbulent and
+          rotational flow around APT&#8209;P.
+        </p>
+
+        <p style="font-weight:600; margin-bottom: 0.3em;">Force coefficients: baseline comparison</p>
+        <div class="about-grid" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="about-card">
+            <h4 style="margin-top:0;">C<sub>D</sub> (drag)</h4>
+            <p>APT&#8209;P: 0.3060<br />APT&#8209;E: 0.1905</p>
+          </div>
+          <div class="about-card">
+            <h4 style="margin-top:0;">C<sub>L</sub> (lift)</h4>
+            <p>APT&#8209;P: 0.2540<br />APT&#8209;E: 0.1050</p>
+          </div>
+          <div class="about-card">
+            <h4 style="margin-top:0;">C<sub>M</sub> (pitching)</h4>
+            <p>APT&#8209;P: &minus;0.1608<br />APT&#8209;E: &minus;0.0869</p>
+          </div>
+        </div>
+
+        <figure class="project-figure">
+          <img src="images/train-project/pressure-velocity-contours.png" alt="Pressure and velocity contours for APT-P and APT-E" loading="lazy" />
+          <figcaption>Pressure and velocity contours: APT-E distributes nose pressure evenly across the surface, while APT-P concentrates it at the nose edge.</figcaption>
+        </figure>
+
+        <p>
+          Region-by-region, the nose accounted for most of the difference: APT&#8209;E's
+          converging nose spread pressure across the surface and let flow pass without curving
+          sharply, while APT&#8209;P's wider nose concentrated pressure at the edges and forced
+          flow to curve, seeding vortices that persisted into the boundary layer and wake. The
+          boundary layer stabilised at roughly 6&nbsp;m (APT&#8209;E) versus 7&nbsp;m
+          (APT&#8209;P) from the roof, and the wake took 40&nbsp;m (APT&#8209;E) versus
+          80&ndash;160&nbsp;m (APT&#8209;P) to settle.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/train-project/nose-pressure-distribution.png" alt="Pressure distribution at the nose for APT-E and APT-P" loading="lazy" />
+          <figcaption>Pressure distribution at the nose. APT-E's window slot and converging profile spread pressure evenly, while APT-P concentrates it at the leading edge.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/train-project/velocity-streamlines-nose.png" alt="Velocity streamlines around the nose for APT-E and APT-P" loading="lazy" />
+          <figcaption>Velocity streamlines around the nose: smooth attached flow for APT-E versus curving, vortex-seeding flow for APT-P.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/train-project/boundary-layer-thickness-graph.png" alt="Boundary layer thickness graph, y versus velocity magnitude, for APT-E and APT-P" loading="lazy" />
+          <figcaption>Boundary layer thickness: velocity magnitude profiles at increasing distance from the nose, stabilising at roughly 6&nbsp;m (APT-E) versus 7&nbsp;m (APT-P).</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/train-project/boundary-layer-flow-comparison.png" alt="Flow around the boundary layer region for APT-E and APT-P" loading="lazy" />
+          <figcaption>Flow around the boundary-layer region: vortices form at the roof and wake of APT-P, while APT-E remains largely smooth.</figcaption>
+        </figure>
+
+        <p>
+          After the nose-width reduction and shortened nose-to-body transition, the updated
+          APT&#8209;P showed a <strong>~31% reduction in drag coefficient</strong> (0.3060 →
+          0.2092) and a <strong>~50% reduction in lift coefficient</strong> (0.2540 → 0.1263),
+          with boundary-layer thickness at the roof reduced by <strong>~7%</strong>. Flow around
+          the nose curved noticeably less, and roof-vortex formation was visibly reduced, though
+          the wake still showed a similar rotational structure to the baseline. The redesign
+          targeted the nose and boundary layer specifically, and the wake result reflected that
+          scope.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/train-project/updated-nose-flow-pressure.png" alt="Velocity streamlines and pressure distribution at the nose of the updated APT-P model" loading="lazy" />
+          <figcaption>Updated APT-P: velocity streamlines (left) and pressure distribution (right) at the nose, showing noticeably less curvature than the baseline.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/train-project/updated-wake-flow.png" alt="Flow at the wake of the updated APT-P model" loading="lazy" />
+          <figcaption>Wake flow of the updated APT-P: a similar rotational structure to the baseline, reflecting the redesign's focus on the nose and boundary layer rather than the wake.</figcaption>
+        </figure>
+
+        <h3>Challenges &amp; solutions</h3>
+        <p>
+          One mesh case for APT&#8209;P produced a solver error during the convergence study,
+          likely from mesh non-orthogonality or aspect ratio at that resolution. Rather than
+          discard the convergence test, a finer mesh case was substituted to confirm convergence
+          behaviour, while a coarser, cheaper mesh case was retained for the actual result
+          reporting, keeping the convergence evidence intact without paying for an unnecessarily
+          expensive mesh in the final runs.
+        </p>
+
+        <h3>Key learnings</h3>
+        <p>
+          Geometry constructed from reference images and engineering assumptions, rather than
+          manufacturer CAD data, carries real uncertainty, and the free-stream conditions used
+          here don't capture tunnels, crosswind, or rain. The project's value was in isolating a
+          clear, well-supported cause-and-effect relationship (nose geometry → pressure
+          distribution → drag and vortex formation) and using it to justify a single, targeted
+          design change rather than changing multiple variables at once.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <p><a href="../index.html#projects">&larr; Back to all projects</a></p>
+  </footer>
+
+</body>
+
+</html>

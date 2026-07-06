@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Laser Housing Thermal Design &amp; Optimisation | Prakshal Shah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <a href="../index.html#projects" class="back-button">&larr; Back to Portfolio</a>
+
+  <div id="intro">
+    <h1>Laser Housing Thermal Design &amp; Optimisation</h1>
+    <div class="intro-subtitle">
+      <p>CFD · Thermal Analysis · Design Optimisation</p>
+      <p>Solo Project</p>
+    </div>
+    <div class="tech-tags">
+      <span class="tech-tag">Ansys Discovery</span>
+      <span class="tech-tag">Thermal-Fluid Simulation</span>
+      <span class="tech-tag">Design of Experiments</span>
+      <span class="tech-tag">Parameter Optimisation</span>
+    </div>
+    <a href="#overview" class="button">Explore</a>
+  </div>
+
+  <header id="header">
+    <div class="header-inner project-nav">
+      <nav id="nav" aria-label="Primary">
+        <ul class="links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#results">Results</a></li>
+          <li>
+            <a class="icon-link" href="mailto:prakshal196@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </li>
+          <li>
+            <a class="icon-link" href="https://www.linkedin.com/in/prakshal-shah/" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section id="overview" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Project Overview</h2></header>
+        <p>
+          A two-part simulation study for a company developing a finned aluminium housing for a
+          laser system. The housing carries three fluids/materials at once: a helium annulus that
+          heats the system (24 W per cm length at 35 Torr), a water-cooled aluminium tube (120
+          cc/min inlet flow at 293 K), and an airflow passing between the outer cooling fins (1
+          m/s). The brief was to model the preliminary design in Ansys, then optimise it so the
+          system reaches a helium temperature of approximately 523 K while keeping the water
+          below 373 K and the outer aluminium below 323 K.
+        </p>
+        <p>
+          <strong>Assignment 1</strong> built and validated the mesh-convergence methodology (a
+          simpler copper-block conduction/convection case) that was then carried over to
+          <strong>Assignment 2</strong>, the full laser housing model: parameter correlation,
+          design of experiments, response surface modelling, and a geometry change (two extra
+          cooling fins) to hit the company's thermal targets.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/laser-housing-thermal/quadrant-geometry-dimensions.png" alt="Housing quadrant geometry, isometric and dimensioned front view" loading="lazy" />
+          <figcaption>Housing quadrant geometry (isometric) and dimensioned front view: 10 fins per side, 2 mm thick with 2 mm gaps, and the 7 mm helium annulus around the central water tube.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="inner">
+        <header class="major"><h2>Technical Approach</h2></header>
+
+        <h3>Key techniques</h3>
+        <ul>
+          <li>Modelled the housing quadrant in SolidWorks as multiple bodies (aluminium outer
+            section, aluminium tube, helium annulus, water channel, air channels), exploiting
+            symmetry to simulate only the top-right quadrant</li>
+          <li>Built a mesh-convergence methodology first on a simplified conduction/convection
+            case (copper block in air), then applied the same approach to the full laser housing
+            model: sweep meshing along the extruded length, face/edge sizing on the fluid
+            channels, and skewness/orthogonal-quality checks at every stage</li>
+          <li>Ran a Spearman parameter correlation (75 samples) across air velocity, helium heat
+            source, and water flow rate against the three target temperatures, then used an
+            Optimal Space-Filling design of experiments, a Kriging response surface, and a final
+            optimisation stage to find candidate operating points</li>
+          <li>Validated every candidate point predicted by the optimisation algorithm with an
+            actual simulation, comparing the two to confirm the response surface was trustworthy
+            before acting on it</li>
+        </ul>
+
+        <figure class="project-figure">
+          <img src="images/laser-housing-thermal/mesh-detail-closeup.png" alt="Close-up of the mesh around the helium annulus and air channels" loading="lazy" />
+          <figcaption>Close-up of the unstructured mesh around the helium annulus and air channels, showing the finer sizing applied to the fluid boundaries.</figcaption>
+        </figure>
+
+        <h3>Process steps</h3>
+        <ol>
+          <li>Ran a 5-case mesh convergence study on a copper-block conduction/convection case to
+            establish and validate the mesh-refinement methodology (Assignment 1)</li>
+          <li>Modelled the preliminary laser housing design, ran a 5-case mesh convergence study
+            on the full quadrant, and simulated the company's baseline operating parameters</li>
+          <li>Performed parameter correlation, design of experiments, and response-surface
+            optimisation on the preliminary design; selected and simulated the best candidate
+            point</li>
+          <li>Identified that helium temperature remained ~5% below target even after parameter
+            optimisation, so added two extra cooling fins (within the company's geometric
+            constraints) and repeated the full correlation → DOE → response surface →
+            optimisation pipeline on the updated geometry</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="results" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Results &amp; Analysis</h2></header>
+
+        <p>
+          The preliminary design, run at the company's baseline operating parameters, showed the
+          water reaching boiling point (374.8 K) and the aluminium reaching 356.5 K, both above
+          the acceptable range, while helium sat at 483.2 K, short of the ~523 K target.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/laser-housing-thermal/baseline-temperature-contour-inlet.png" alt="Temperature contour at the inlet, preliminary design" loading="lazy" />
+          <figcaption>Temperature contour at the inlet, preliminary design. The helium heat source (bottom-left) is visibly hotter than the outer aluminium fins.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/laser-housing-thermal/baseline-temperature-contour-isometric-1.png" alt="Isometric temperature contour, preliminary design" loading="lazy" />
+          <figcaption>Isometric temperature contour, preliminary design. Temperature rises noticeably along the housing's length as heat accumulates.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/laser-housing-thermal/baseline-temperature-contour-isometric-2.png" alt="Isometric temperature contour, preliminary design, opposite face" loading="lazy" />
+          <figcaption>Isometric temperature contour, preliminary design, opposite face. The water channel stays cool near the inlet but warms towards the outlet.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/laser-housing-thermal/baseline-temperature-along-length.png" alt="Helium, aluminium, and water temperature plotted along the housing length, preliminary design" loading="lazy" />
+          <figcaption>Helium, aluminium, and water temperature plotted along the 0.2 m housing length, preliminary design. Water starts above 305 K at the inlet, exceeding the boiling-point limit.</figcaption>
+        </figure>
+
+        <p>
+          Parameter correlation showed a strong negative relationship between air velocity and
+          aluminium temperature, a strong positive relationship between the helium heat source and
+          all three temperatures, and an isolated relationship between water flow rate and water
+          temperature only. Acting on this, parameter optimisation alone brought the aluminium and
+          water temperatures comfortably under target (317.3 K and 368.0 K), but helium temperature
+          plateaued around 498 K, still short of the 523 K target, with no parameter combination
+          able to close the gap without pushing another temperature out of range.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/laser-housing-thermal/correlation-matrix-baseline.png" alt="Spearman parameter correlation matrix, preliminary design" loading="lazy" />
+          <figcaption>Spearman parameter correlation matrix. Air velocity has a strong negative correlation with aluminium temperature; the helium heat source correlates strongly and positively with all three temperatures; water flow rate affects only the water temperature.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/laser-housing-thermal/tradeoff-3d-baseline.png" alt="3D trade-off chart from the response-surface optimisation, preliminary design" loading="lazy" />
+          <figcaption>3D trade-off chart from the response-surface optimisation, preliminary design: aluminium, helium, and water temperature for every candidate design point.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/laser-housing-thermal/tradeoff-2d-baseline.png" alt="2D trade-off chart, helium versus aluminium temperature, preliminary design" loading="lazy" />
+          <figcaption>2D trade-off chart (helium vs. aluminium temperature), preliminary design. The feasible points cluster where aluminium temperature stays lowest.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/laser-housing-thermal/optimised-temperature-contour-baseline-geometry.png" alt="Temperature contour after parameter optimisation, preliminary geometry" loading="lazy" />
+          <figcaption>Temperature contour after parameter optimisation, preliminary geometry. Aluminium and water are now comfortably within range, but helium plateaus below the 523 K target.</figcaption>
+        </figure>
+
+        <p>
+          Adding two extra cooling fins (a 20% increase in cooling surface area, within the
+          company's geometric constraints) broke that trade-off: the extra fin area let the system
+          absorb a higher helium heat source without pushing the outer aluminium out of range. The
+          final optimised design, with the candidate point verified by simulation, reached
+          <strong>helium 521.8 K, aluminium 320.1 K, and water 372.4 K</strong>, satisfying all
+          three of the company's thermal targets simultaneously.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/laser-housing-thermal/updated-geometry-two-extra-fins.png" alt="Updated geometry with two extra cooling fins added" loading="lazy" />
+          <figcaption>Updated geometry: two extra cooling fins (12×2 mm per side) added within the company's geometric constraints, increasing cooling surface area by 20%.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/laser-housing-thermal/tradeoff-3d-updated.png" alt="3D trade-off chart, updated 12-fin geometry" loading="lazy" />
+          <figcaption>3D trade-off chart, updated (12-fin) geometry. The achievable helium temperature range shifts up to roughly 518–520 K.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/laser-housing-thermal/tradeoff-2d-updated.png" alt="2D trade-off chart, updated geometry" loading="lazy" />
+          <figcaption>2D trade-off chart, updated geometry. Feasible candidate points cluster near the lowest aluminium temperatures achievable at this helium range.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/laser-housing-thermal/updated-temperature-contour-inlet.png" alt="Temperature contour at the inlet, final optimised 12-fin design" loading="lazy" />
+          <figcaption>Temperature contour at the inlet, final optimised (12-fin) design, verified by simulation at helium 521.8 K, aluminium 320.1 K, water 372.4 K.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/laser-housing-thermal/updated-temperature-contour-isometric.png" alt="Isometric temperature contour, final optimised design" loading="lazy" />
+          <figcaption>Isometric temperature contour, final optimised design. The extra fins visibly cool the outer aluminium section along the full housing length.</figcaption>
+        </figure>
+
+        <h3>Key learnings</h3>
+        <p>
+          This project reinforced that parameter optimisation has a ceiling: once every input
+          variable had been pushed toward its most favourable value and one target still couldn't
+          be met, the fix had to come from the geometry itself, not from further tuning. Running
+          the full correlation → DOE → response surface pipeline twice (once on the preliminary
+          design, once on the updated geometry) also showed how a single geometry change can shift
+          which input parameters matter: the heat source's influence on aluminium temperature
+          dropped noticeably once the extra fins were added, changing which trade-offs were worth
+          making.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <p><a href="../index.html#projects">&larr; Back to all projects</a></p>
+  </footer>
+
+</body>
+
+</html>

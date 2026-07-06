@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Topology Optimization | Prakshal Shah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <a href="../index.html#projects" class="back-button">&larr; Back to Portfolio</a>
+
+  <div id="intro">
+    <h1>Topology Optimization for a GE Engine Bracket</h1>
+    <div class="intro-subtitle">
+      <p>Fusion 360 · Netfabb · Generative Design · Additive Manufacturing</p>
+      <p>Team Project</p>
+    </div>
+    <div class="tech-tags">
+      <span class="tech-tag">Topology Optimization</span>
+      <span class="tech-tag">Generative Design</span>
+      <span class="tech-tag">Additive Manufacturing</span>
+      <span class="tech-tag">Cost &amp; Sustainability Analysis</span>
+    </div>
+    <a href="#overview" class="button">Explore</a>
+  </div>
+
+  <header id="header">
+    <div class="header-inner project-nav">
+      <nav id="nav" aria-label="Primary">
+        <ul class="links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#results">Results</a></li>
+          <li>
+            <a class="icon-link" href="mailto:prakshal196@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </li>
+          <li>
+            <a class="icon-link" href="https://www.linkedin.com/in/prakshal-shah/" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section id="overview" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Project Overview</h2></header>
+        <p>
+          A team project for Swansea University's EG-M37 Additive Manufacturing module, evaluating
+          whether additive manufacturing could replace conventional CNC milling for a real
+          aerospace component. After a feasibility study comparing five candidate parts (a muzzle
+          brake, a gyroid-structured heat exchanger, an automotive bell crank, an internal wing
+          structure, and a jet engine bracket), the team selected the
+          <strong>GE Jet Engine Bracket Design Challenge</strong> as the strongest candidate,
+          manufactured in Ti-6Al-4V (yield strength 882.5 MPa), and carried it through generative
+          design in Fusion 360 and build preparation in Netfabb.
+        </p>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="inner">
+        <header class="major"><h2>Technical Approach</h2></header>
+
+        <h3>Key techniques</h3>
+        <ul>
+          <li>Ran generative design in Fusion 360 under the challenge's four defined load cases (vertical, horizontal, 42° angled, and torsional loading), with constraints on minimum wall thickness (1.27 mm), a 1.5 safety factor, and a 0.5 mm maximum global displacement</li>
+          <li>Extended the study into a morphological sensitivity analysis, exaggerating one load direction by 25% at a time (vertical, horizontal, angular, and torsional "dominance" scenarios) to see how the optimiser reshaped the bracket under each case</li>
+          <li>Took all four generative outcomes into Netfabb and ran a manufacturability study across five build orientations (0°, 30°, 45°, 90°, 180°) for Laser Powder Bed Fusion, screening against a 70 mm build-height limit and comparing support volume and build time</li>
+        </ul>
+
+        <figure class="project-figure">
+          <img src="images/topology-optimization/load-conditions-diagram.png" alt="Load conditions and load interfaces diagram for the GE Jet Engine Bracket Challenge" loading="lazy" />
+          <figcaption>Load conditions and interfaces. The four load cases defined by the challenge: 8000 lbs vertical, 8500 lbs horizontal, 9500 lbs at 42° from vertical, and 5000 lb-in torsional, applied across five load interfaces on the bracket.</figcaption>
+        </figure>
+
+        <h3>Process steps</h3>
+        <ol>
+          <li>Modelled the baseline bracket from the GE Jet Engine Bracket Challenge (GrabCAD) and ran Fusion 360 generative design against the four load cases, producing four candidate outcomes that all achieved a 45–48% mass reduction</li>
+          <li>Re-ran the generative study under four "dominance" load scenarios to understand how the optimised geometry adapted when a single load direction was exaggerated relative to the others</li>
+          <li>Imported each outcome into Netfabb, screened out orientations exceeding the 70 mm build-height limit, and compared the remaining 0°/180° options on support volume and estimated build time</li>
+          <li>Selected the best-performing outcome and build orientation, then ran a cost and post-processing analysis against conventional CNC milling</li>
+        </ol>
+
+        <figure class="project-figure">
+          <img src="images/topology-optimization/generative-design-view1.png" alt="Generative design outcome geometry, view 1, with facet mesh" loading="lazy" />
+          <figcaption>Generative design geometry, view 1: one of the four Fusion 360 outcomes, shown with its underlying facet mesh, the organic, load-path-driven shape typical of topology optimisation.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/topology-optimization/generative-design-view2.png" alt="Generative design outcome geometry, view 2" loading="lazy" />
+          <figcaption>Generative design geometry, view 2: the same outcome from a different angle, showing how material was concentrated along the load paths between the four mounting bosses.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="results" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Results &amp; Analysis</h2></header>
+
+        <p>
+          All four Fusion 360 outcomes met the challenge's constraints, each achieving a 45–48%
+          mass reduction while comfortably clearing the 1.5 minimum safety factor. The baseline-case
+          results show stress between 301.7–308.6 MPa, global displacement of 0.30–0.31 mm, weight
+          of 1.06–1.09 kg, and safety factors of 2.86–2.93 across the four outcomes.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/topology-optimization/baseline-results-table.png" alt="Table of baseline case results from topology optimisation across four outcomes" loading="lazy" />
+          <figcaption>Baseline case results: stress, displacement, weight, and minimum safety factor for the four generative design outcomes, all clearing the 1.5 minimum safety factor with a 45–48% mass reduction versus the baseline.</figcaption>
+        </figure>
+
+        <p>
+          Feeding all four outcomes into Netfabb's build-orientation study (0°, 30°, 45°, 90°, 180°)
+          against the 70 mm build-height limit eliminated three of the five angles outright. Only
+          0° and 180° stayed under the limit, with all four outcomes measuring 61.9–62.2 mm at these
+          two orientations versus 70–107 mm at 30°/45°/90°. Comparing the two surviving orientations,
+          0° won on every outcome: build time fell by roughly 18–29% (e.g. Outcome 3: 102h01m at
+          180° versus 79h13m at 0°) and support volume dropped by roughly 30–43% (e.g. Outcome 1:
+          162.5 cm³ at 180° versus 107.1 cm³ at 0°).
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/topology-optimization/build-orientation-table.png" alt="Table of build height, part and support volume, and build time across five build orientations" loading="lazy" />
+          <figcaption>Build orientation study: build height, part/support volume, and estimated build time across five orientations (0°–180°) for each outcome; only 0° and 180° stay under the 70 mm build-height limit.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/topology-optimization/build-time-comparison-chart.png" alt="Bar chart comparing estimated build time at 0 degrees versus 180 degrees for four outcomes" loading="lazy" />
+          <figcaption>Estimated build time comparison: 0° print orientation beat 180° on every outcome, cutting build time by roughly 18–29%.</figcaption>
+        </figure>
+
+        <p>
+          At the 0° orientation, <strong>Outcome 3</strong> stood out on manufacturability, with the
+          lowest build time (79h13m) and lowest support volume (93.1 cm³) of the four, at a modest
+          weight penalty of around 3% versus the lightest outcome (1.093 kg vs. 1.06 kg), while also
+          carrying the lowest peak stress (301.7 MPa) and the highest safety factor (2.926) of the
+          four. That combination of print speed, minimal support material, and the largest safety
+          margin made it the strongest candidate to carry forward into the cost and post-processing
+          comparison against conventional CNC milling.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/topology-optimization/final-bracket-geometry.png" alt="Final optimised bracket geometry" loading="lazy" />
+          <figcaption>Final bracket geometry: Outcome 3, carried forward into Netfabb for build preparation.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/topology-optimization/build-orientation-renders.png" alt="Netfabb support generation and build plate nesting renders" loading="lazy" />
+          <figcaption>Build preparation in Netfabb: support structure generation (left) and multi-part nesting on the build plate (right) for the selected outcome and orientation.</figcaption>
+        </figure>
+
+        <h3>Key learnings</h3>
+        <p>
+          The build-orientation screen showed that a design finalised in simulation still has to
+          survive a second, very different set of constraints (build height, support volume, and
+          print time) before it's actually manufacturable. It also reinforced that the "best"
+          outcome isn't always the lightest one: Outcome 3 traded a small weight penalty for a
+          meaningfully faster, cheaper, and safer print, a trade-off that simulation results alone
+          can't settle without running the manufacturability numbers.
+        </p>
+
+        <h3>Team &amp; my contribution</h3>
+        <p>
+          A team project for the EG-M37 Additive Manufacturing module. My contribution covered the
+          generative design study in Fusion 360 across all four load cases and dominance scenarios,
+          the build-orientation and manufacturability analysis in Netfabb, and the cost and
+          post-processing comparison against conventional CNC milling.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <p><a href="../index.html#projects">&larr; Back to all projects</a></p>
+  </footer>
+
+</body>
+
+</html>
