@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Automotive Steel Investigation | Prakshal Shah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <a href="../index.html#projects" class="back-button">&larr; Back to Portfolio</a>
+
+  <div id="intro">
+    <h1>Automotive Steel Investigation</h1>
+    <div class="intro-subtitle">
+      <p>Metallography · Tensile Testing · Failure Analysis</p>
+      <p>Solo Project</p>
+    </div>
+    <div class="tech-tags">
+      <span class="tech-tag">Materials Characterisation</span>
+      <span class="tech-tag">Microstructural Analysis</span>
+      <span class="tech-tag">Mechanical Testing</span>
+    </div>
+    <a href="#overview" class="button">Explore</a>
+  </div>
+
+  <header id="header">
+    <div class="header-inner project-nav">
+      <nav id="nav" aria-label="Primary">
+        <ul class="links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#results">Results</a></li>
+          <li>
+            <a class="icon-link" href="mailto:prakshal196@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </li>
+          <li>
+            <a class="icon-link" href="https://www.linkedin.com/in/prakshal-shah/" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section id="overview" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Project Overview</h2></header>
+        <p>
+          A metallography and mechanical-testing investigation comparing two automotive steel
+          samples to determine which vehicle body application each is suited for. Sample
+          preparation (grinding, polishing, etching) revealed each sample's microstructure, and a
+          simulated tensile test, run in the course's PIP simulation software, quantified its
+          mechanical properties. Together, these identified which sample belongs in a crash
+          zone and which belongs in a high-strength structural part.
+        </p>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="inner">
+        <header class="major"><h2>Technical Approach</h2></header>
+
+        <h3>Key techniques</h3>
+        <ul>
+          <li>Progressive mechanical grinding across four grit stages (120, 400, 600, 1200),
+            washing with water then ethanol and drying between each stage to prevent
+            cross-contamination</li>
+          <li>Fine polishing with 6-micron and 1-micron cloths, followed by etching in 3% Nital
+            for 3–4 seconds to reveal the grain structure</li>
+          <li>Microscope verification of grain-boundary visibility after etching, re-etching where
+            needed, followed by a simulated tensile test in the course's PIP software to obtain
+            yield stress, ultimate tensile strength, and necking strain for each sample</li>
+        </ul>
+
+        <h3>Process steps</h3>
+        <ol>
+          <li>Ground each sample through the four grit stages, washing and drying between each
+            pass</li>
+          <li>Polished to a 1-micron finish, etched with 3% Nital, and verified grain-boundary
+            visibility under the microscope</li>
+          <li>Captured the microstructure of each sample and ran a simulated tensile test to
+            obtain their mechanical properties</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="results" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Results &amp; Analysis</h2></header>
+
+        <p>
+          Sample A showed a ferrite microstructure with an equiaxed grain structure, while Sample
+          B showed a martensite microstructure with a sharp, lenticular grain structure. This
+          microstructural difference lines up directly with the tensile results:
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Yield Stress (MPa)</th>
+              <th>Ultimate Tensile Strength (MPa)</th>
+              <th>Necking Strain</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sample A</td>
+              <td>366 ± 19</td>
+              <td>582</td>
+              <td>0.21</td>
+            </tr>
+            <tr>
+              <td>Sample B</td>
+              <td>1748 ± 39</td>
+              <td>1779</td>
+              <td>0.05</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <figure class="project-figure">
+          <img src="images/automotive-steel/microstructure-sample-a.png" alt="Microstructure of Sample A, ferrite equiaxed grain structure" loading="lazy" />
+          <figcaption>Microstructure of Sample A: ferrite, equiaxed grain structure.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/automotive-steel/microstructure-sample-b.png" alt="Microstructure of Sample B, martensite lenticular grain structure" loading="lazy" />
+          <figcaption>Microstructure of Sample B: martensite, lenticular grain structure.</figcaption>
+        </figure>
+
+        <p>
+          Martensite is strong and brittle, while ferrite is soft and ductile. Sample A's lower
+          yield and ultimate tensile strength means it absorbs energy through early plastic
+          deformation and fails in a ductile manner, which is exactly the behaviour needed in a
+          crash zone, where the part should deform and absorb as much impact energy as possible
+          before failing. Sample B's much higher yield and ultimate tensile strength means it
+          resists plastic deformation until it reaches yield stress, then fails in a brittle
+          manner. That is the behaviour needed in an ultra-high-strength structural part, where the priority is
+          maintaining structural integrity and not breaking under load, to protect the passenger
+          cell during a crash.
+        </p>
+        <p>
+          <strong>Conclusion:</strong> Sample A (ferritic microstructure) is suited to a crash
+          zone part; Sample B (martensitic microstructure) is suited to an ultra-high-strength
+          body part.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <p><a href="../index.html#projects">&larr; Back to all projects</a></p>
+  </footer>
+
+</body>
+
+</html>

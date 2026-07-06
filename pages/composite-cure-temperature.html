@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Cure Temperature Effects on Carbon Fibre Epoxy Composites | Prakshal Shah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <a href="../index.html#projects" class="back-button">&larr; Back to Portfolio</a>
+
+  <div id="intro">
+    <h1>Cure Temperature Effects on Carbon Fibre Epoxy Composites</h1>
+    <div class="intro-subtitle">
+      <p>Tensile Testing · DMA · Optical Microscopy · SEM</p>
+      <p>Solo Project</p>
+    </div>
+    <div class="tech-tags">
+      <span class="tech-tag">Materials Characterisation</span>
+      <span class="tech-tag">Composite Materials</span>
+      <span class="tech-tag">Thermal Analysis</span>
+    </div>
+    <a href="#overview" class="button">Explore</a>
+  </div>
+
+  <header id="header">
+    <div class="header-inner project-nav">
+      <nav id="nav" aria-label="Primary">
+        <ul class="links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#results">Results</a></li>
+          <li>
+            <a class="icon-link" href="mailto:prakshal196@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </li>
+          <li>
+            <a class="icon-link" href="https://www.linkedin.com/in/prakshal-shah/" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section id="overview" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Project Overview</h2></header>
+        <p>
+          A solo materials-characterisation study into how curing temperature and time affect the
+          mechanical and thermal properties of a carbon fibre / epoxy composite. Three ±45° carbon
+          fibre prepreg laminates were cured under different conditions: under-cured (90°C, 1
+          hour), optimally cured (120°C, 1 hour), and over-heated (240°C, 4 hours). These were then
+          compared using tensile testing, Dynamic Mechanical Analysis (DMA), optical microscopy, and
+          Scanning Electron Microscopy (SEM).
+        </p>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="inner">
+        <header class="major"><h2>Technical Approach</h2></header>
+
+        <h3>Key techniques</h3>
+        <ul>
+          <li>Prepared three ±45° carbon fibre prepreg laminates, each vacuum-bag cured under a different temperature/time combination to simulate under-cure, optimal cure, and over-heating</li>
+          <li>Ran tensile tests on a Hounsfield machine with a 25 kN load cell to extract Young's modulus, ultimate tensile strength, and strain at failure for each sample, cross-checking extensometer-based strain against the machine's cross-head (compliance) strain</li>
+          <li>Characterised thermal behaviour with a PerkinElmer DMA 8000, extracting storage modulus and glass transition temperature (Tg) via both the tangent-onset method and the Tan δ peak</li>
+          <li>Examined polished cross-sections under a ZEISS optical microscope (5×) for delamination and matrix cracking, then examined tensile fracture surfaces under ZEISS EVO LS25 SEM to identify the dominant failure mode for each sample</li>
+        </ul>
+
+        <h3>Process steps</h3>
+        <ol>
+          <li>Cured the under-cured, optimally cured, and over-heated samples to their respective temperature/time schedules, then ran the tensile test on all three</li>
+          <li>Ran DMA on all three samples across a temperature sweep, extracting storage modulus and Tg by both the tangent-onset method and the Tan δ peak</li>
+          <li>Polished and etched cross-sections for optical microscopy, then examined fracture surfaces under SEM, to relate the microstructural defects and fracture mode back to the tensile and DMA results</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="results" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Results &amp; Analysis</h2></header>
+
+        <p>
+          The optimally cured (OC) sample outperformed both the under-cured (UC) and over-heated
+          (OH) samples on every mechanical measure: the highest ultimate tensile strength (200.4
+          MPa vs. 112.4 MPa for UC and 177.2 MPa for OH) and strain at failure (0.124 vs. 0.015 for
+          UC and 0.107 for OH), with a moderate Young's modulus (16.3 GPa) reflecting a fully
+          cross-linked matrix. The under-cured sample had the highest modulus (19.5 GPa) but failed
+          at the lowest stress and strain, a sign of incomplete cross-linking leaving a stiff but
+          brittle, poorly bonded matrix.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/composite-cure-temperature/stress-strain-all-samples.png" alt="Stress versus strain for all three samples" loading="lazy" />
+          <figcaption>Stress vs. strain for all samples. The optimally cured sample reaches the highest stress and strain before failure, while the under-cured sample fails almost immediately after its initial linear region.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/composite-cure-temperature/mechanical-properties-bar-chart.png" alt="Bar chart of mechanical properties across all samples" loading="lazy" />
+          <figcaption>Mechanical properties by sample: Young's modulus, UTS, and strain at failure for the optimally cured, under-cured, and over-heated samples.</figcaption>
+        </figure>
+
+        <p>
+          DMA confirmed the same pattern: the glass transition temperature (from the tangent-onset
+          method) was 120°C for OC, 115°C for OH, and only 50°C for UC, nearly half the other two,
+          meaning the under-cured sample would lose mechanical performance at a much lower service
+          temperature.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/composite-cure-temperature/dma-all-samples.png" alt="DMA storage modulus and Tan delta curves for all samples" loading="lazy" />
+          <figcaption>DMA of all samples: storage modulus and Tan δ across the temperature sweep, showing the under-cured sample's modulus collapsing at a much lower temperature than the other two.</figcaption>
+        </figure>
+
+        <p>
+          Optical microscopy and SEM traced these results back to the microstructure. The OC sample
+          showed almost no defects and a clean fibre-matrix bond, with fibre breakage as the
+          dominant failure mode. The UC sample showed intralaminar matrix cracking, delamination,
+          and visible fibre spread-out from a weak fibre-matrix bond, consistent with a
+          matrix-dominated failure. The OH sample showed severe matrix cracking and delamination
+          from thermal degradation (chemical aging), with SEM revealing resin lumps unevenly
+          attached to the fibres in a mixed fibre-breakage and matrix-failure mode.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/composite-cure-temperature/optical-cross-section-optimally-cured.png" alt="Optical cross-section of the optimally cured sample" loading="lazy" />
+          <figcaption>Cross-section of the optimally cured sample: a clean, well-bonded fibre-matrix structure with almost no visible defects.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/composite-cure-temperature/sem-optimally-cured.png" alt="SEM fracture surface of the optimally cured sample" loading="lazy" />
+          <figcaption>SEM fracture surface, optimally cured sample: fibre breakage is the dominant failure mode, consistent with a fully cross-linked, well-bonded matrix.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/composite-cure-temperature/optical-cross-section-under-cured.png" alt="Optical cross-section of the under-cured sample, showing fibre spread-out" loading="lazy" />
+          <figcaption>Cross-section of the under-cured sample: intralaminar matrix cracking, delamination, and visible fibre spread-out from a weak fibre-matrix bond.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/composite-cure-temperature/sem-under-cured.png" alt="SEM fracture surface of the under-cured sample" loading="lazy" />
+          <figcaption>SEM fracture surface, under-cured sample: a matrix-dominated failure, with fibres pulling cleanly away from a poorly bonded matrix.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/composite-cure-temperature/optical-cross-section-over-heated.png" alt="Optical cross-section of the over-heated sample, showing cracks on outside edges" loading="lazy" />
+          <figcaption>Cross-section of the over-heated sample: severe matrix cracking and delamination from thermal degradation (chemical aging), with cracks visible on the outside edges.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/composite-cure-temperature/sem-over-heated.png" alt="SEM fracture surface of the over-heated sample" loading="lazy" />
+          <figcaption>SEM fracture surface, over-heated sample: resin lumps unevenly attached to the fibres, in a mixed fibre-breakage and matrix-failure mode.</figcaption>
+        </figure>
+
+        <h3>Key learnings</h3>
+        <p>
+          Running the same set of tests across three cure conditions made the trade-off concrete:
+          curing below the optimum temperature leaves incomplete cross-linking and a brittle,
+          low-Tg matrix, while curing too far above it in time and temperature triggers thermal
+          degradation that reverses some of those cross-links again. The 120°C / 1-hour condition
+          sits at the peak of that curve, a reminder that more cure time or heat isn't automatically
+          better once the resin is fully cross-linked.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <p><a href="../index.html#projects">&larr; Back to all projects</a></p>
+  </footer>
+
+</body>
+
+</html>

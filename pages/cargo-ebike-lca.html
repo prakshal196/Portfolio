@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Cargo E-Bike Life Cycle Analysis | Prakshal Shah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <a href="../index.html#projects" class="back-button">&larr; Back to Portfolio</a>
+
+  <div id="intro">
+    <h1>Cargo E-Bike Life Cycle Analysis: Tern Quick Haul P9</h1>
+    <div class="intro-subtitle">
+      <p>LCA · Sustainable Materials · Ecotoxicity Assessment</p>
+      <p>Team Project</p>
+    </div>
+    <div class="tech-tags">
+      <span class="tech-tag">Life Cycle Analysis</span>
+      <span class="tech-tag">Sustainable Design</span>
+      <span class="tech-tag">Materials Selection</span>
+      <span class="tech-tag">Circular Economy</span>
+    </div>
+    <a href="#overview" class="button">Explore</a>
+  </div>
+
+  <header id="header">
+    <div class="header-inner project-nav">
+      <nav id="nav" aria-label="Primary">
+        <ul class="links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#results">Results</a></li>
+          <li>
+            <a class="icon-link" href="mailto:prakshal196@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </li>
+          <li>
+            <a class="icon-link" href="https://www.linkedin.com/in/prakshal-shah/" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section id="overview" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Project Overview</h2></header>
+        <p>
+          A group Life Cycle Assessment (LCA) of the Tern Quick Haul P9 cargo e-bike, comparing its
+          linear "take-make-dispose" baseline against a redesigned version built around
+          circular-economy principles. Using a functional unit of 300 battery-charging cycles
+          (roughly 23,700 km), the team modelled the bike's full cradle-to-grave impact in
+          Ecoinvent, then targeted material substitutions and a product redesign at the
+          environmental hotspots the LCA identified: chiefly <strong>human health damage</strong>
+          and <strong>ecotoxicity</strong>.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/lca/cargo-ebike-product-photo.png" alt="Tern Quick Haul P9 cargo e-bike" loading="lazy" />
+          <figcaption>Tern Quick Haul P9: the cargo e-bike modelled in this assessment.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="inner">
+        <header class="major"><h2>Technical Approach</h2></header>
+
+        <h3>Key techniques</h3>
+        <ul>
+          <li>Built a cradle-to-grave system boundary (raw material extraction through end of life) and a full component-level inventory of the P9's ~22.9 kg build, assigning material data down to individual parts (frame, wheels, transmission, e-system, and brakes) where public data allowed</li>
+          <li>Ran a ReCiPe midpoint and endpoint impact assessment across 18 categories in Ecoinvent, normalised against both World and Europe per-person baselines, to identify which materials and impact categories dominated the bike's footprint</li>
+          <li>Modelled three targeted design interventions against the same functional unit: a modular repairable battery, a shift from primary to recycled aluminium and copper, and a belt-drive/internal-gear-hub transmission. Then re-ran the full LCA to quantify the improvement</li>
+        </ul>
+
+        <figure class="project-figure">
+          <img src="images/lca/system-boundary-diagram.png" alt="System boundary diagram for the cargo e-bike LCA" loading="lazy" />
+          <figcaption>System boundary, cradle to grave: raw material extraction, production and assembly, transport, an 8-year/79 km-a-day use phase, and end-of-life recycling, reuse, or landfill.</figcaption>
+        </figure>
+
+        <h3>Process steps</h3>
+        <ol>
+          <li>Compiled a full material and component inventory for the Tern Quick Haul P9, including consumables replaced over its operating life (tyres, drivetrain chain)</li>
+          <li>Ran the baseline impact assessment and identified six materials (PCB, copper, 6061 aluminium, lithium-ion cells, stainless steel, and 4130 high-strength steel) as the dominant contributors across freshwater ecotoxicity, marine ecotoxicity, and human carcinogenic toxicity</li>
+          <li>Designed three interventions targeting those materials directly: a modular battery to replace the sealed Bosch pack, recycled aluminium/copper substitution, and a belt-and-IGH drivetrain in place of the chain-and-derailleur system</li>
+          <li>Rebuilt the inventory with the updated material distribution and re-ran the impact assessment to compare against the baseline</li>
+        </ol>
+
+        <figure class="project-figure">
+          <img src="images/lca/material-distribution-baseline.png" alt="Material distribution by mass for the baseline build" loading="lazy" />
+          <figcaption>Material distribution, baseline build. By mass, the ~22.9 kg build is dominated by 6061 aluminium (34%) and cardboard packaging (17%), with 4130 high-strength steel, stainless steel, and synthetic rubber making up most of the remainder.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="results" class="panel-tinted">
+      <div class="inner">
+        <header class="major"><h2>Results &amp; Analysis</h2></header>
+
+        <p>
+          The baseline assessment showed three impact categories dominating by a wide margin:
+          Freshwater Ecotoxicity, Marine Ecotoxicity, and Human Carcinogenic Toxicity, each more
+          than 99% higher than every other midpoint category. Six materials (PCB and copper driving
+          the ecotoxicity categories; 6061 aluminium, stainless steel, 4130 high-strength steel, and
+          lithium-ion cells driving carcinogenic toxicity) accounted for roughly 70–95% of the
+          bike's total impact across every significant category.
+        </p>
+
+        <figure class="project-figure">
+          <img src="images/lca/midpoint-impact-baseline.png" alt="ReCiPe midpoint impact categories for the baseline assessment" loading="lazy" />
+          <figcaption>ReCiPe midpoint impact categories, baseline. Freshwater Ecotoxicity, Marine Ecotoxicity, and Human Carcinogenic Toxicity dwarf all 15 other midpoint categories.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/lca/toxicity-drivers-baseline.png" alt="Primary drivers of toxicity, baseline case, broken down by material" loading="lazy" />
+          <figcaption>Primary drivers of toxicity, baseline. PCB and copper from ore drive freshwater (498.2) and marine (366.8) ecotoxicity; 6061 aluminium and stainless steel drive human carcinogenic toxicity (845.6 kg 1,4-DCB).</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/lca/endpoint-world-vs-europe-baseline.png" alt="Endpoint damage categories, World versus Europe, baseline case" loading="lazy" />
+          <figcaption>Endpoint damage, World vs. Europe (baseline). Human Health dominates total endpoint damage against both baselines, with Ecosystems and Resources both under 1% of the total.</figcaption>
+        </figure>
+
+        <p>
+          After substituting part of the primary aluminium and copper for recycled material and
+          redesigning the battery and drivetrain, the updated LCA showed:
+        </p>
+        <ul>
+          <li>Freshwater ecotoxicity down 23.6% (498.2 → 380.7)</li>
+          <li>Marine ecotoxicity down 23.1% (366.8 → 282.2)</li>
+          <li>Human carcinogenic toxicity down 18.4% (845.6 → 690.1)</li>
+          <li>An average reduction of roughly 16% across the remaining midpoint categories. The one
+            exception was terrestrial ecotoxicity, which rose about 14%, traced to the fluxing
+            chemicals released when processing recycled/scrap metal</li>
+          <li>At the endpoint level, damage to Human Health fell by roughly 19%, with Ecosystems and
+            Resources, already under 1% of total damage in the baseline, reduced by a further 19%
+            and 11% respectively</li>
+        </ul>
+
+        <figure class="project-figure">
+          <img src="images/lca/toxicity-drivers-updated.png" alt="Primary drivers of toxicity after design interventions" loading="lazy" />
+          <figcaption>Primary drivers of toxicity, after design interventions. Substituting recycled aluminium and copper cut freshwater ecotoxicity to 380.7, marine ecotoxicity to 282.2, and human carcinogenic toxicity to 690.1 kg 1,4-DCB.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/lca/world-linear-vs-updated.png" alt="World endpoint comparison, linear baseline versus updated design" loading="lazy" />
+          <figcaption>World: baseline vs. updated design. Human Health damage falls from 10.58 to 8.58, Ecosystems from 0.217 to 0.176, and Resources from 0.102 to 0.091.</figcaption>
+        </figure>
+        <figure class="project-figure">
+          <img src="images/lca/europe-linear-vs-updated.png" alt="Europe endpoint comparison, linear baseline versus updated design" loading="lazy" />
+          <figcaption>Europe: baseline vs. updated design. Human Health damage falls from 7.02 to 5.69, Ecosystems from 1.06 to 0.86, and Resources from 0.073 to 0.065.</figcaption>
+        </figure>
+
+        <h3>Design interventions</h3>
+        <ul>
+          <li><strong>Battery:</strong> replaced the sealed, glued Bosch PowerPack 400 (no cell-level repair, no return scheme) with a Gouach-style modular battery: individually replaceable 18650 cells, a screw-assembled aluminium housing, QR-linked material labelling, and USB-C/12V second-life output ports</li>
+          <li><strong>Materials:</strong> substituted part of the primary 6061 aluminium (10.05 kg down to 6.55 kg primary + 3.5 kg recycled) and primary copper (800 g down to 500 g primary + 300 g recycled) for recycled equivalents, cutting embodied energy from the Hall–Héroult electrolysis and copper-refining stages</li>
+          <li><strong>Drivetrain:</strong> replaced the chain-and-derailleur system with a belt drive and internal gear hub (IGH), a sealed, low-maintenance system expected to outlast a steel chain 5–10× and cut the lubricant/degreaser waste associated with regular chain maintenance</li>
+        </ul>
+
+        <h3>Business strategy &amp; market position</h3>
+        <p>
+          Alongside the technical redesign, the team proposed a battery buy-back scheme: a 15%
+          discount on a new battery, plus a raffle for a free e-bike, in exchange for returning an
+          end-of-life or damaged pack. This was designed to route batteries back into recycling and
+          remanufacturing rather than landfill. A market comparison against three competitor cargo
+          e-bikes (Tern GSD S10, Yuba Spicy Curry V3, Xtracycle RFA) found none of them offered a
+          modular battery system, second-life battery functionality, or a belt drivetrain, all
+          standard, repairable parts, but no circular business model behind them.
+        </p>
+
+        <h3>Key learnings</h3>
+        <p>
+          Working through both a ReCiPe midpoint and endpoint assessment made the distinction
+          between potential hazard and actual damage concrete: freshwater and marine ecotoxicity
+          looked dominant at the midpoint level, but barely register at the endpoint stage next to
+          Human Health. That gap shaped which interventions were worth pursuing: reducing primary
+          metal use had by far the largest effect on the categories that actually translate into
+          human health damage.
+        </p>
+
+        <h3>Team &amp; my contribution</h3>
+        <p>
+          A 6-person group project (Group 15: Callum Thomas, Kifah Raidan, Mubarak Alhijraf, Duncan
+          Eksteen, Mohammed Adeen Khopatkar, and myself). My contribution covered the baseline LCA
+          from end to end: building the initial cargo e-bike model, compiling the full materials
+          inventory (sourcing and weighing data for every component), and modelling the transport
+          phase, including transport distances, freight strategy, and warehouse/distribution-hub
+          selection. I then built the updated LCA once the design interventions were agreed, and
+          was closely involved in the decision-making behind which interventions to pursue; the
+          detailed design work for the agreed interventions (battery, materials, drivetrain) was
+          carried out by the rest of the team.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <p><a href="../index.html#projects">&larr; Back to all projects</a></p>
+  </footer>
+
+</body>
+
+</html>
